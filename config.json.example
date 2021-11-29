@@ -1,0 +1,20 @@
+{
+    "delay_seconds": 60,
+    "sensors": [
+        {
+            "name": "sensorname",
+            "temp_adj": 0,
+            "serial": "sensorserial"
+        },
+        {
+            "name": "sensorname",
+            "temp_adj": 0,
+            "serial": "sensorserial"
+        }
+    ],
+    "thinger": {
+        "user": "thingeruser",
+	    "bucket_id": "thingerbucket",
+        "auth_key": "thingerauth"
+    }
+}
