@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <script src="static/js/chart.js"></script>
+    </head>
+    <body>
+        <canvas id="myChart" width="400" height="400"></canvas>
+        <script>
+            const ctx = document.getElementById('myChart').getContext('2d');
+            const myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [
+                    {% for rec in recs %}
+                        '{{ rec[0] }}',
+                    {% endfor %}
+                    ],
+                    datasets: [{
+                        label: 'office',
+                        data: [
+                        {% for rec in recs %}
+                            {{ rec[1] }},
+                        {% endfor %}
+                        ],
+                        fill: false,
+                        borderColor: 'rgb(192, 75, 75)',
+                        tension: 0.1
+                    },{
+                        label: 'outside',
+                        data: [
+                        {% for rec in recs %}
+                            {{ rec[2] }},
+                        {% endfor %}
+                        ],
+                        fill: false,
+                        borderColor: 'rgb(192, 192, 75)',
+                        tension: 1.0
+                    }]
+                },
+                options: {
+                }
+            });
+        </script>
+    </body>
+</html>
