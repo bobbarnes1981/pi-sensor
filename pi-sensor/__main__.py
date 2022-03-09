@@ -4,7 +4,7 @@ import logging
 import sys
 
 from service import Service
-from thinger import Thinger
+from sqlitedb import SqliteDb
 
 config_path = 'config.json'
 if len(sys.argv) == 2:
@@ -19,7 +19,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 srv = Service(
     config['delay_seconds'], config['sensors'],
-    Thinger(config['thinger']['user'], config['thinger']['bucket_id'], config['thinger']['auth_key'])
+    SqliteDb(config['sqlitedb']['db_file'])
 )
 #srv.daemon = True
 srv.start()

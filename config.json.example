@@ -16,5 +16,8 @@
         "user": "thingeruser",
 	    "bucket_id": "thingerbucket",
         "auth_key": "thingerauth"
+    },
+    "sqlitedb": {
+        "db_file": "sqlite.db"
     }
 }
