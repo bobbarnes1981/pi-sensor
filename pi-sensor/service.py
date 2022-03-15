@@ -23,8 +23,7 @@ class Service(Thread):
                 temperature = self.sensors[name].temperature()
                 if temperature == None:
                     logging.error("Could not get temperature")
-                else:
-                    temperatures[name] = temperature
+                temperatures[name] = temperature
             self.storage.store(temperatures)
             time.sleep(self.delay_seconds)
 
