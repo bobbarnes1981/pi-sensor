@@ -20,7 +20,7 @@
                         label: 'office',
                         data: [
                         {% for rec in recs %}
-                            {{ rec[1] }},
+                            {{ rec[1] if rec[1] else '' }},
                         {% endfor %}
                         ],
                         fill: false,
@@ -30,11 +30,21 @@
                         label: 'outside',
                         data: [
                         {% for rec in recs %}
-                            {{ rec[2] }},
+                            {{ rec[2] if rec[2] else '' }},
                         {% endfor %}
                         ],
                         fill: false,
                         borderColor: 'rgb(192, 192, 75)',
+                        tension: 1.0
+                    },{
+                        label: 'garage',
+                        data: [
+                        {% for rec in recs %}
+                            {{ rec[3] if rec[3] else '' }},
+                        {% endfor %}
+                        ],
+                        fill: false,
+                        borderColor: 'rgb(75, 192, 75)',
                         tension: 1.0
                     }]
                 },

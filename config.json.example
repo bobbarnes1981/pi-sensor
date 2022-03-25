@@ -10,6 +10,11 @@
             "name": "sensorname",
             "temp_adj": 0,
             "serial": "sensorserial"
+        },
+        {
+            "name": "sensorname",
+            "temp_adj": 0,
+            "serial": "sensorserial"
         }
     ],
     "thinger": {
